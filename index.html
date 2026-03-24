@@ -75,7 +75,7 @@ body {
 </div>
 
 <script>
-// 👉 REAL bounce easing (easeOutBack)
+// mal bounce efekt
 function easeOutBack(t) {
   const c1 = 1.70158;
   const c3 = c1 + 1;
@@ -122,7 +122,7 @@ function animateDigit(el, newVal) {
   inner.children[1].textContent = newVal;
 
   let start = null;
-  const duration = 650; // 🔥 počasneje
+  const duration = 1000;
 
   function frame(ts) {
     if (!start) start = ts;
@@ -131,7 +131,6 @@ function animateDigit(el, newVal) {
 
     const e = easeOutBack(t);
 
-    // 👉 overshoot jasno viden
     const translate = e * 110;
     const rotate = e * -75;
 
@@ -169,7 +168,6 @@ function tick() {
   createDigit(document.getElementById(id),"0");
 });
 
-// ⏱ update samo na MINUTO (da ni spam flipa)
 let lastMinute = null;
 
 setInterval(() => {
